@@ -1,0 +1,44 @@
+{
+  "projectName": "Block + Full-Chip Integration Test Case - All Parameters",
+  "customerName": "Test Customer",
+  "emailId": "test@example.com",
+  "technology": "7nm",
+  "isFlat": false,
+  "fullChip": {
+    "enabled": true,
+    "factors": ["pnr", "ir_drop", "pv", "sta"],
+    "percentageFactors": [
+      "abutment_floorplan",
+      "analog_ip_integration",
+      "macro_intensive",
+      "merged_mode_constraints",
+      "modes",
+      "clock_distribution"
+    ],
+    "percentageFactorLevels": {
+      "io_pad_count": "high"
+    },
+    "dft": true,
+    "cadFlow": false,
+    "rtl_drop_count": 3,
+    "fullChipBlocksTier": "9to18"
+  },
+  "blocks": [
+    {
+      "blockName": "Block 1",
+      "gateCount": 2.5,
+      "complexityFactors": [
+        "synthesis_complexity",
+        "new_design",
+        "merged_mode_constraints",
+        "macro_intensive",
+        "io_blocks",
+        "physical_blocks",
+        "dft_block_level"
+      ],
+      "complexityFactorLevels": {},
+      "dft": true,
+      "rtl_drop_count": 3
+    }
+  ]
+}

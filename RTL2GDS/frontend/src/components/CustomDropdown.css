@@ -1,0 +1,119 @@
+.custom-dropdown {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.custom-dropdown * {
+    box-sizing: border-box;
+}
+
+.custom-dropdown-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    /* Move padding here to control height better */
+    border: 1px solid #cbd5e0;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+    font-size: 13px;
+    color: #2d3748;
+    transition: all 0.2s ease;
+    min-height: 44px;
+    /* Match standard input height */
+    height: 44px;
+    /* Force height */
+    box-sizing: border-box;
+    /* Ensure padding is included in height */
+    width: 100%;
+    /* Force width to match container */
+    overflow: hidden;
+    /* Prevent any content from expanding box */
+    gap: 8px;
+    /* Gap between input and arrow */
+}
+
+.custom-dropdown-search-input {
+    flex: 1;
+    /* Take remaining space instead of forcing 100% width */
+    width: auto;
+    /* Allow flex to control width */
+    min-width: 0;
+    /* Allow shrinking if needed */
+    height: 100%;
+    border: none !important;
+    /* Override global .form-group input[type="text"] */
+    box-shadow: none !important;
+    /* Remove global focus shadow */
+    outline: none;
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+    background: transparent !important;
+}
+
+.custom-dropdown-header:hover {
+    border-color: #1FA2A8;
+}
+
+.custom-dropdown-header.open {
+    border-color: #1FA2A8;
+    box-shadow: 0 0 0 3px rgba(31, 162, 168, 0.1);
+}
+
+.dropdown-arrow {
+    transition: transform 0.2s ease;
+    color: #718096;
+}
+
+.dropdown-arrow.open {
+    transform: rotate(180deg);
+}
+
+.custom-dropdown-list {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    width: 100%;
+    right: auto;
+    box-sizing: border-box;
+    /* Explicitly ensure border/padding doesn't expand width */
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    z-index: 10001;
+    /* Ensure it stays on top of all other sections */
+    max-height: 110px;
+    /* Show approx 3 items (Global default) */
+    overflow-y: auto;
+}
+
+.custom-dropdown-option {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 13px;
+    color: #2d3748;
+    transition: all 0.15s ease;
+}
+
+.custom-dropdown-option.hovered {
+    background-color: #1FA2A8;
+    color: white;
+}
+
+.custom-dropdown-option.selected {
+    background-color: rgba(31, 162, 168, 0.1);
+    font-weight: 500;
+}
+
+.custom-dropdown-option.selected.hovered {
+    background-color: #1FA2A8;
+    color: white;
+}
+
+.custom-dropdown-option:active {
+    background-color: #159A9C;
+}
