@@ -33,6 +33,11 @@ export class AuthService {
     // Find user by email in database
     const user = await this.userService.findByEmail(email);
     
+    // Additional validation: ensure email is not empty
+    if (!email || email.trim() === '') {
+      throw new UnauthorizedException('Email is required');
+    }
+    
     if (!user || !user.isActive) {
       throw new UnauthorizedException('Invalid email or password');
     }
