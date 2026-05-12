@@ -8,6 +8,12 @@ export class EmailService {
   private isConfigured: boolean = false;
 
   constructor(private configService: ConfigService) {
+    // ... existing code ...
+  }
+
+  isEmailConfigured(): boolean {
+    return this.isConfigured;
+  }
     const host = this.configService.get<string>('SMTP_HOST');
     const port = this.configService.get<number>('SMTP_PORT', 587);
     const secure = this.configService.get<string>('SMTP_SECURE') === 'true';
