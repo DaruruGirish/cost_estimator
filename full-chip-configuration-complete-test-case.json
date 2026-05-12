@@ -1,0 +1,31 @@
+{
+  "projectName": "Complete Full Chip Configuration Test Case",
+  "customerName": "Test Customer",
+  "emailId": "test@example.com",
+  "technology": "7nm",
+  "isFlat": false,
+  "fullChip": {
+    "enabled": true,
+    "factors": ["pnr", "ir_drop", "pv", "sta"],
+    "percentageFactors": [
+      "abutment_floorplan",
+      "merged_mode_constraints",
+      "analog_ip_integration",
+      "macro_intensive",
+      "modes",
+      "clock_distribution"
+    ],
+    "percentageFactorLevels": {
+      "io_pad_count": "high"
+    },
+    "dft": true,
+    "cadFlow": false,
+    "rtl_drop_count": 3,
+    "powerDomains": "nested",
+    "designMaturity": "new_design",
+    "glueLogic": true,
+    "instanceCount": 4.5,
+    "fullChipBlocksTier": "gt18"
+  },
+  "blocks": []
+}

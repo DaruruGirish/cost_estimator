@@ -1,0 +1,49 @@
+{
+  "projectName": "Block Development Test Case - Two Blocks with All Parameters",
+  "customerName": "Test Customer",
+  "emailId": "test@example.com",
+  "technology": "7nm",
+  "isFlat": false,
+  "fullChip": {
+    "enabled": false,
+    "factors": [],
+    "percentageFactors": [],
+    "percentageFactorLevels": {},
+    "dft": false,
+    "cadFlow": false
+  },
+  "blocks": [
+    {
+      "blockName": "Block 1",
+      "gateCount": 2.5,
+      "complexityFactors": [
+        "synthesis_complexity",
+        "new_design",
+        "merged_mode_constraints",
+        "macro_intensive",
+        "io_blocks",
+        "physical_blocks",
+        "dft_block_level"
+      ],
+      "complexityFactorLevels": {},
+      "dft": true,
+      "rtl_drop_count": 3
+    },
+    {
+      "blockName": "Block 2",
+      "gateCount": 2.5,
+      "complexityFactors": [
+        "synthesis_complexity",
+        "new_design",
+        "merged_mode_constraints",
+        "macro_intensive",
+        "io_blocks",
+        "physical_blocks",
+        "dft_block_level"
+      ],
+      "complexityFactorLevels": {},
+      "dft": true,
+      "rtl_drop_count": 3
+    }
+  ]
+}
