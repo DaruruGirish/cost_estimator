@@ -16,6 +16,11 @@ export class EstimationService {
     months: number;
     price: number;
   } {
+    // Validate input
+    if (!projectConfig) {
+      throw new BadRequestException('Project configuration is required');
+    }
+
     // ============================================================
     // FLAT IMPLEMENTATION DETECTION - Route to separate service
     // ============================================================
