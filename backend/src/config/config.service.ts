@@ -21,18 +21,23 @@ export class ConfigService implements OnModuleInit {
   ) {}
 
   async onModuleInit() {
-    // Load configuration from database on startup
-    await this.loadConfigurationFromDatabase();
-    
-    // If database is empty, initialize with defaults
-    const timelineCount = await this.timelineRepository.count();
-    const factorCount = await this.pricingFactorRepository.count();
-    const costSettingCount = await this.costSettingRepository.count();
-    
-    if (timelineCount === 0 && factorCount === 0 && costSettingCount === 0) {
-      console.log('Database is empty, initializing with default configuration...');
-      await this.saveConfigurationToDatabase(defaultConfiguration);
-      this.configuration = defaultConfiguration;
+    try {
+      // Load configuration from database on startup
+      await this.loadConfigurationFromDatabase();
+      
+      // If database is empty, initialize with defaults
+      const timelineCount = await this.timelineRepository.count();
+      const factorCount = await this.pricingFactorRepository.count();
+      const costSettingCount = await this.costSettingRepository.count();
+      
+      if (timelineCount === 0 && factorCount === 0 && costSettingCount === 0) {
+        console.log('Database is empty, initializing with default configuration...');
+        await this.saveConfigurationToDatabase(defaultConfiguration);
+        this.configuration = defaultConfiguration;
+      }
+    } catch (error) {
+      console.error('Error initializing configuration:', error);
+      throw new BadRequestException('Failed to initialize configuration');
     }
   }
 
