@@ -1,0 +1,501 @@
+.admin-view {
+  min-height: 100vh;
+  background: var(--main-bg);
+  display: flex;
+  flex-direction: row;
+}
+
+.admin-actions-bar {
+  background: var(--bg-secondary);
+  padding: 20px 0;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid var(--border-light);
+  margin-top: auto;
+  width: 100%;
+}
+
+.admin-actions {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.btn-primary {
+  padding: 10px 20px;
+  background: var(--primary-blue);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: var(--primary-blue-hover);
+}
+
+.btn-secondary {
+  padding: 10px 20px;
+  background: var(--bg-secondary);
+  color: var(--primary-blue);
+  border: 2px solid var(--primary-blue);
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #f7fafc;
+}
+
+.btn-primary:disabled,
+.btn-secondary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error-text {
+  color: #e53e3e;
+  font-size: 14px;
+  margin-right: 12px;
+}
+
+.admin-container {
+  display: flex;
+  padding: 0 16px 20px 16px;
+  gap: 0;
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: none;
+  margin: 0;
+  background: var(--main-bg);
+}
+
+.admin-sidebar {
+  width: 240px;
+  background: var(--sidebar-bg);
+  padding: 80px 0 0 0;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.sidebar-item {
+  width: 100%;
+  padding: 12px 24px;
+  text-align: left;
+  background: transparent;
+  border: none;
+  border-left: 3px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-weight: 500;
+  margin: 1px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sidebar-item span:first-child {
+  font-size: 16px;
+  width: 20px;
+  text-align: center;
+}
+
+.sidebar-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--accent-blue);
+}
+
+.sidebar-item.active {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--accent-blue);
+  border-left-color: var(--accent-blue);
+  font-weight: 600;
+}
+
+.admin-content {
+  flex: 1;
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  min-height: calc(100vh - 48px);
+}
+
+.config-section h2 {
+  margin: 0 0 24px 0;
+  color: #1a202c;
+  font-size: 24px;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 12px;
+}
+
+.config-section h3 {
+  margin: 32px 0 16px 0;
+  color: #4a5568;
+  font-size: 18px;
+}
+
+.config-item {
+  padding: 16px;
+  background: var(--card-bg);
+  border-radius: 8px;
+  margin-bottom: 12px;
+  border-left: 4px solid var(--accent-blue);
+}
+
+/* Grid layouts for config cards */
+.config-item[style*="grid-template-columns"] {
+  display: grid;
+  gap: 20px;
+}
+
+
+.levels-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #e2e8f0;
+}
+
+.levels-section h4 {
+  margin: 0 0 16px 0;
+  color: #4a5568;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.level-item {
+  padding: 16px;
+  background: var(--bg-secondary);
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-light);
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: #4a5568;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1);
+}
+
+.help-text {
+  margin-top: 6px;
+  color: #718096;
+  font-size: 12px;
+}
+
+.section-save-button {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 2px solid #e2e8f0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.section-save-button .btn-primary {
+  min-width: 180px;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Large Tablets and Small Desktops (max-width: 1280px) */
+@media (max-width: 1280px) {
+  .admin-content {
+    padding: 16px;
+  }
+
+  .config-section h2 {
+    font-size: 22px;
+  }
+}
+
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .admin-sidebar {
+    width: 200px;
+  }
+
+  .sidebar-item {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .sidebar-item span:first-child {
+    font-size: 14px;
+  }
+
+  .admin-content {
+    padding: 16px;
+  }
+
+  .config-section h2 {
+    font-size: 20px;
+  }
+
+  .config-section h3 {
+    font-size: 16px;
+  }
+
+  .admin-actions {
+    padding: 0 20px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+  }
+}
+
+/* Small Tablets and Large Phones (max-width: 768px) */
+@media (max-width: 768px) {
+  .admin-view {
+    flex-direction: column;
+  }
+
+  .admin-sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 60px 0 0 0;
+    flex-direction: row;
+    overflow-x: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .sidebar-item {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+    padding: 12px 8px;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+    justify-content: center;
+  }
+
+  .sidebar-item.active {
+    border-left-color: transparent;
+    border-bottom-color: var(--accent-blue);
+  }
+
+  .sidebar-item span:first-child {
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .admin-container {
+    padding: 0 12px 16px 12px;
+  }
+
+  .admin-content {
+    padding: 12px;
+    min-height: auto;
+  }
+
+  .config-section h2 {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .config-section h3 {
+    font-size: 15px;
+    margin-top: 20px;
+  }
+
+  .config-item {
+    padding: 12px;
+  }
+
+  .form-group {
+    margin-bottom: 12px;
+  }
+
+  .form-group label {
+    font-size: 13px;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="number"],
+  .form-group select {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .section-save-button {
+    margin-top: 20px;
+    padding-top: 16px;
+  }
+
+  .section-save-button .btn-primary {
+    min-width: 100%;
+    width: 100%;
+  }
+
+  .admin-actions {
+    padding: 0 12px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  /* Make grid-based config items stack on mobile */
+  .config-item[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+
+
+/* Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .admin-sidebar {
+    padding-top: 60px;
+  }
+
+  .sidebar-item {
+    min-width: 100px;
+    padding: 10px 6px;
+    font-size: 12px;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .sidebar-item span:first-child {
+    font-size: 16px;
+    margin-bottom: 2px;
+  }
+
+  .admin-container {
+    padding: 0 8px 12px 8px;
+  }
+
+  .admin-content {
+    padding: 10px;
+  }
+
+  .config-section h2 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+  }
+
+  .config-section h3 {
+    font-size: 14px;
+    margin-top: 16px;
+  }
+
+  .config-item {
+    padding: 10px;
+    margin-bottom: 8px;
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+  }
+
+  .form-group label {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="number"],
+  .form-group select {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .help-text {
+    font-size: 11px;
+  }
+
+  .level-item {
+    padding: 12px;
+  }
+
+  .section-save-button {
+    margin-top: 16px;
+    padding-top: 12px;
+  }
+}
+
+/* Extra Small Devices (max-width: 320px) */
+@media (max-width: 320px) {
+  .sidebar-item {
+    min-width: 80px;
+    padding: 8px 4px;
+    font-size: 11px;
+  }
+
+  .admin-content {
+    padding: 8px;
+  }
+
+  .config-section h2 {
+    font-size: 15px;
+  }
+
+  .config-item {
+    padding: 8px;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="number"],
+  .form-group select {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+}
